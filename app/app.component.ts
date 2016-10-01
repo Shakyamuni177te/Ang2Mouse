@@ -25,9 +25,9 @@ const CHARACTERS: Character[] = [
     selector: 'mouse-app',
     template: `<h1>{{title}}</h1>
                <h2>{{sectiontitle}}</h2>
-               <div class="characterScreenContainer">
-                 <div class="characterBasesContainer">
-                   <h3>Select Character Base</h3>
+               <div class="characterScreen container">
+                 <div class="characterBases container">
+                   <h3>Select Character</h3>
                    <ul class="characters">
                      <li *ngFor="let character of characters" 
                      [class.selected]="character === selectedCharacter"
@@ -36,8 +36,8 @@ const CHARACTERS: Character[] = [
                      </li>
                    </ul>
                  </div>
-                 <div class="currentCharacter">
-                   <h3>{{selectedCharacter.name}}</h3>
+                 <div *ngIf="selectedCharacter" class="currentCharacter container">
+                   <h3>Edit {{selectedCharacter.name}}</h3>
                    <div>
                      <label>id: {{selectedCharacter.id}}</label>
                    </div>
@@ -48,7 +48,12 @@ const CHARACTERS: Character[] = [
                  </div>
                </div>`
 styles: [`
-  .characterBasesContainer {
+  .container {
+    overflow: hidden; /* Clearfix! */
+    zoom: 1;  /* Triggering "hasLayout" in IE */
+    display: block;
+  }
+  .characterBases {
     float: left;    
   }
   .selected {
@@ -101,7 +106,6 @@ styles: [`
   .currentCharacter {
     position: relative;
     left: 20px;
-    top: 20px;
   }
 `]
 })
