@@ -25,30 +25,31 @@ const CHARACTERS: Character[] = [
     selector: 'mouse-app',
     template: `<h1>{{title}}</h1>
                <h2>{{sectiontitle}}</h2>
-               <div class="leftSide">
-                 <h3>Select Character Base</h3>
-                 <ul class="characters">
-                   <li *ngFor="let character of characters" 
-                   [class.selected]="character === selectedCharacter"
-                   (click)="onSelect(character)">
-                     <span class="badge">{{character.id}}</span> {{character.name}}
-                   </li>
-                 </ul>
-               </div>
-               <div class="currentCharacter">
-                 <h3>{{selectedCharacter.name}}</h3>
-                 <div>
-                   <label>id: {{selectedCharacter.id}}</label>
+               <div class="characterScreenContainer">
+                 <div class="characterBasesContainer">
+                   <h3>Select Character Base</h3>
+                   <ul class="characters">
+                     <li *ngFor="let character of characters" 
+                     [class.selected]="character === selectedCharacter"
+                     (click)="onSelect(character)">
+                       <span class="badge">{{character.id}}</span> {{character.name}}
+                     </li>
+                   </ul>
                  </div>
-                 <div>
-                   <label>name: {{selectedCharacter.name}}</label>
-                   <input [(ngModel)]="selectedCharacter.name" placeholder="name">
+                 <div class="currentCharacter">
+                   <h3>{{selectedCharacter.name}}</h3>
+                   <div>
+                     <label>id: {{selectedCharacter.id}}</label>
+                   </div>
+                   <div>
+                     <label>name: {{selectedCharacter.name}}</label>
+                     <input [(ngModel)]="selectedCharacter.name" placeholder="name">
+                   </div>
                  </div>
                </div>`
 styles: [`
-  .leftSide {
-    width: 45%;
-    display: inline;
+  .characterBasesContainer {
+    float: left;    
   }
   .selected {
     background-color: #CFD8DC !important;
@@ -98,7 +99,9 @@ styles: [`
     border-radius: 4px 0 0 4px;
   }
   .currentCharacter {
-    float: right;
+    position: relative;
+    left: 20px;
+    top: 20px;
   }
 `]
 })
@@ -111,8 +114,4 @@ export class AppComponent {
   onSelect(character: Character): void {
   this.selectedCharacter = character;
   }
-    character: Character = {
-    id: 1,
-    name: 'Dragon-Bear'
-  };
 }
