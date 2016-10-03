@@ -1,0 +1,19 @@
+<h2>{{sectiontitle}}</h2>
+<div class="characterScreen container">
+  <div class="characterBases container">
+    <h3>Select Character</h3>
+    <ul class="characters">
+      <li *ngFor="let character of characters"
+          [class.selected]="character === selectedCharacter"
+          (click)="onSelect(character)">
+          <span class="badge">{{character.id}}</span> {{character.name}}
+      </li>
+    </ul>
+  </div>
+  <div *ngIf="selectedCharacter">
+    <h2>
+        Selected: {{selectedCharacter.name | uppercase}}
+    </h2>
+    <button (click)="gotoDetail()">View Details</button>
+  </div>
+</div>

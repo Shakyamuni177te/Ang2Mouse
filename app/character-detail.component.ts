@@ -1,31 +1,36 @@
-import { Component, Input } from '@angular/core';
+// Keep the Input import for now, we'll remove it later:
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params }   from '@angular/router';
+import { Location }                 from '@angular/common';
+
 import { Character } from './character';
 
+import { CharacterService } from './character.service';
+
 @Component({
+  moduleId: module.id,
   selector: 'character-detail',
-  template: `<div *ngIf="character" class="currentCharacter container">
-               <h3>Edit {{character.name}}</h3>
-               <div>
-                 <label>id: {{character.id}}</label>
-               </div>
-               <div>
-                 <label>name: {{character.name}}</label>
-                 <input [(ngModel)]="character.name" placeholder="name">
-               </div>
-             </div>`,
-  styles: [`
-    .container {
-    overflow: hidden; /* Clearfix! */
-    zoom: 1;  /* Triggering "hasLayout" in IE */
-    display: block;
-    }
-    .currentCharacter {
-    position: relative;
-    left: 20px;
-    }
-  `]
+  templateUrl: 'character-detail.component.html',
+  styleUrls: [ 'character-detail.component.css' ]
 })
-export class CharacterDetailComponent {
-  @Input()
+
+export class CharacterDetailComponent implements OnInit {
   character: Character;
+
+  constructor(
+    private characterService: CharacterService,
+    private route: ActivatedRoute,
+    private location: Location
+  ) {}
+
+  ngOnInit(): void {
+    this.route.params.forEach((params: Params) => {
+      let id = +params['id'];
+    this.characterService.getCharacter(id)
+      .then(character => this.character = character);
+    });
+  }
+  goBack(): void {
+    this.location.back();
+  }
 }
