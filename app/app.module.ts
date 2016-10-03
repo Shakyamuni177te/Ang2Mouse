@@ -2,8 +2,10 @@ import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }   from '@angular/forms';
 
-import { AppComponent }  from './app.component';
+import { AppComponent }             from './app.component';
 import { CharacterDetailComponent } from './character-detail.component';
+import { CharactersComponent }      from './characters.component';
+import { CharacterService }         from './character.service';
 
 @NgModule({
   imports: [
@@ -12,7 +14,11 @@ import { CharacterDetailComponent } from './character-detail.component';
   ],
   declarations: [
     AppComponent,
-    CharacterDetailComponent
+    CharacterDetailComponent,
+    CharactersComponent
+  ],
+  providers: [
+    CharacterService
   ],
   bootstrap: [
      AppComponent 
