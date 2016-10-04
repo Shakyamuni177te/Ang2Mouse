@@ -26,6 +26,23 @@ export class CharacterService {
                .then(characters => characters.find(character => character.id === id));
   }
 
+  create(name: string): Promise<Character> {
+    return this.http
+      .post(this.charactersUrl, JSON.stringify({name: name}), {headers: this.headers})
+      .toPromise()
+      .then(res => res.json().data)
+      .catch(this.handleError);
+  }
+
+  delete(id: number): Promise<void> {
+    const url = `${this.charactersUrl}/${id}`;
+    return this.http.delete(url, {headers: this.headers})
+      .toPromise()
+      .then(() => null)
+      .catch(this.handleError);
+  }
+
+
   update(character: Character): Promise<Character> {
     const url = `${this.charactersUrl}/${character.id}`;
     return this.http

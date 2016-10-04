@@ -33,6 +33,25 @@ export class CharactersComponent implements OnInit {
   onSelect(character: Character): void {
   this.selectedCharacter = character;
   }
+  
+  add(name: string): void {
+    name = name.trim();
+    if (!name) { return; }
+    this.characterService.create(name)
+        .then(character => {
+          this.characters.push(character);
+           this.selectedCharacter = null;
+        });
+  }
+  
+  delete(character: Character): void {
+    this.characterService
+      .delete(character.id)
+      .then(() => {
+        this.characters = this.characters.filter(h => h !== character);
+        if (this.selectedCharacter === character) { this.selectedCharacter = null; }
+      });
+  }
  
   gotoDetail(): void {
     this.router.navigate(['/detail', this.selectedCharacter.id]);
