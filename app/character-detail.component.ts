@@ -30,7 +30,14 @@ export class CharacterDetailComponent implements OnInit {
       .then(character => this.character = character);
     });
   }
+
   goBack(): void {
     this.location.back();
   }
+
+  save(): void {
+  this.characterService.update(this.character)
+    .then(() => this.goBack());
+  }
+
 }
