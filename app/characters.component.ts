@@ -48,7 +48,7 @@ export class CharactersComponent implements OnInit {
     this.characterService
       .delete(character.id)
       .then(() => {
-        this.characters = this.characters.filter(h => h !== character);
+        this.characters = this.characters.filter(c => c !== character);
         if (this.selectedCharacter === character) { this.selectedCharacter = null; }
       });
   }
