@@ -1,6 +1,12 @@
 <h2>{{sectiontitle}}</h2>
 <div class="characterScreen container">
   <div class="characterBases container">
+    <div>
+      <label>Character name:</label> <input #characterName />
+      <button (click)="add(characterName.value); characterName.value=''">
+        Add
+      </button>
+    </div>
     <h3>Select Character</h3>
     <ul class="characters">
       <li *ngFor="let character of characters"
