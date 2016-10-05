@@ -3,10 +3,10 @@ import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs';
 
 import { Character } from '../characters/character';
-import { Base }      from '../base/base';
+import { Base }      from './base';
 
 @Injectable()
-export class BaseSearchService {
+export class BasesSearchService {
 
   constructor(private http: Http) {}
 

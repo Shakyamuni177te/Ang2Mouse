@@ -17,8 +17,8 @@ import { CharacterDetailComponent } from './characters/character-detail.componen
 import { CharactersComponent }      from './characters/characters.component';
 import { CharacterService }         from './characters/character.service';
 
-import { BaseComponent }      from './base/base.component';
-import { BaseSearchService }  from './base/base-search.service';
+import { BasesComponent }      from './bases/bases.component';
+import { BasesSearchService }  from './bases/bases-search.service';
 
 import { routing }                  from './app.routing';
 
@@ -36,7 +36,7 @@ import { routing }                  from './app.routing';
     CharacterDetailComponent,
     CharactersComponent,
     CharacterSearchComponent,
-    BaseComponent
+    BasesComponent
   ],
   providers: [
     CharacterService

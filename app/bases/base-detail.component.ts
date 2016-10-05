@@ -6,8 +6,8 @@ import { Location }                 from '@angular/common';
 import { Character }        from '../characters/character';
 import { CharacterService } from '../characters/character.service';
 
-import { BaseService }  from './base.service';
-import { BaseSearchService }  from './base-search.service';
+import { BasesService }  from './bases.service';
+import { BasesSearchService }  from './bases-search.service';
 
 @Component({
   moduleId: module.id,
@@ -22,7 +22,7 @@ export class BaseDetailComponent implements OnInit {
   character: Character;
 
   constructor(
-    private baseService: BaseService,
+    private basesService: BasesService,
     private route: ActivatedRoute,
     private location: Location
   ) {}

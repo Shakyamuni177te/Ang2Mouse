@@ -6,7 +6,7 @@ import { MissionsComponent }      from './missions.component';
 import { CharactersComponent }     from './characters/characters.component';
 import { CharacterDetailComponent} from './characters/character-detail.component';
 
-import { BaseComponent } from './base/base.component';
+import { BasesComponent } from './bases/bases.component';
 
 const appRoutes: Routes = [
   {
@@ -27,8 +27,8 @@ const appRoutes: Routes = [
     component: CharactersComponent
   },
   {
-    path: 'base',
-    component: BaseComponent
+    path: 'bases',
+    component: BasesComponent
   }
 ];
 

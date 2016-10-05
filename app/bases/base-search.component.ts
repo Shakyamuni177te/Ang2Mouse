@@ -6,14 +6,14 @@ import { Subject }           from 'rxjs/Subject';
 import { CharacterSearchService } from '../characters/character-search.service';
 import { Character } from '../characters/character';
 
-import { BaseSearchService }  from './base-search.service';
+import { BasesSearchService }  from './bases-search.service';
 
 @Component({
   moduleId: module.id,
   selector: 'base-search',
   templateUrl: 'base-search.component.html',
   styleUrls: [ 'base-search.component.css' ],
-  providers: [ CharacterSearchService, BaseSearchService ]
+  providers: [ CharacterSearchService, BasesSearchService ]
 })
 
 export class BaseSearchComponent implements OnInit {

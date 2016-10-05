@@ -8,11 +8,11 @@ import { CharacterService } from '../characters/character.service';
 @Component({
     moduleId: module.id,
     selector: 'mouse-characters',
-    templateUrl: 'base.component.html',
-    styleUrls: [ 'base.component.css' ] 
+    templateUrl: 'bases.component.html',
+    styleUrls: [ 'bases.component.css' ] 
 })
 
-export class BaseComponent implements OnInit {
+export class BasesComponent implements OnInit {
 
   sectiontitle = 'Base Facility:';
   characters: Character[];

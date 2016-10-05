@@ -6,7 +6,7 @@ import 'rxjs/add/operator/toPromise';
 import { Character } from '../characters/character';
 
 @Injectable()
-export class BaseService {
+export class BasesService {
 
   private headers = new Headers({'Content-Type': 'application/json'});
   private charactersUrl = 'app/characters';  // URL to web api

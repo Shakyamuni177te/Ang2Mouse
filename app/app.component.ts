@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
   <nav>
     <a routerLink="/missions" routerLinkActive="active">Missions</a>
     <a routerLink="/characters" routerLinkActive="active">Characters</a>
-    <a routerLink="/base" routerLinkActive="active">Base</a>
+    <a routerLink="/bases" routerLinkActive="active">Bases</a>
   </nav>
   <router-outlet></router-outlet>`,
   styleUrls: [ 'app.component.css' ]
