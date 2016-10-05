@@ -5,13 +5,14 @@ import { Component } from '@angular/core';
   selector: 'mouse-app',
   template: `<h1>{{title}}</h1>
   <nav>
-    <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
+    <a routerLink="/missions" routerLinkActive="active">Missions</a>
     <a routerLink="/characters" routerLinkActive="active">Characters</a>
+    <a routerLink="/base" routerLinkActive="active">Base</a>
   </nav>
   <router-outlet></router-outlet>`,
   styleUrls: [ 'app.component.css' ]
 })
 
 export class AppComponent {
-  title = 'Order Of The Mouse: Operation Dovecot';
+  title = 'Order Of The Mouse: Operation Silk Scarf';
 }

@@ -1,0 +1,20 @@
+<h2>{{sectiontitle}}</h2>
+<div class="baseScreen container">
+  <div class="baseBases container">
+    <div>
+    <h3>Select Area:</h3>
+    <ul class="facilities">
+      <li *ngFor="let facility of base.facilities"
+          [class.selected]="base.facility === selectedFacility"
+          (click)="onSelect(base.facility)">
+          <span class="badge">{{base.facility.id}}</span> {{base.facility.name}}
+      </li>
+    </ul>
+  </div>
+  <div *ngIf="selectedFacility" class="selectedBase">
+    <h2>
+        Selected: {{selectedFacility.name | uppercase}}
+    </h2>
+    <button (click)="gotoDetail()">View Details</button>
+  </div>
+</div>

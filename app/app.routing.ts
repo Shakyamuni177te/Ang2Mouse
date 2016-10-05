@@ -1,19 +1,22 @@
 import { ModuleWithProviders }  from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { DashboardComponent }      from './dashboard.component';     
+import { MissionsComponent }      from './missions.component';     
+
 import { CharactersComponent }     from './characters/characters.component';
 import { CharacterDetailComponent} from './characters/character-detail.component';
+
+import { BaseComponent } from './base/base.component';
 
 const appRoutes: Routes = [
   {
     path: '',
-    redirectTo: '/dashboard',
+    redirectTo: '/missions',
     pathMatch: 'full'
   },
   {
-    path: 'dashboard',
-    component: DashboardComponent
+    path: 'missions',
+    component: MissionsComponent
   },
   {
     path: 'detail/:id',
@@ -22,6 +25,10 @@ const appRoutes: Routes = [
   {
     path: 'characters',
     component: CharactersComponent
+  },
+  {
+    path: 'base',
+    component: BaseComponent
   }
 ];
 

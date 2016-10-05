@@ -3,18 +3,20 @@ import { Router }            from '@angular/router';
 import { Observable }        from 'rxjs/Observable';
 import { Subject }           from 'rxjs/Subject';
 
-import { CharacterSearchService } from './character-search.service';
-import { Character } from './character';
+import { CharacterSearchService } from '../characters/character-search.service';
+import { Character } from '../characters/character';
+
+import { BaseSearchService }  from './base-search.service';
 
 @Component({
   moduleId: module.id,
-  selector: 'character-search',
-  templateUrl: 'character-search.component.html',
-  styleUrls: [ 'character-search.component.css' ],
-  providers: [CharacterSearchService]
+  selector: 'base-search',
+  templateUrl: 'base-search.component.html',
+  styleUrls: [ 'base-search.component.css' ],
+  providers: [ CharacterSearchService, BaseSearchService ]
 })
 
-export class CharacterSearchComponent implements OnInit {
+export class BaseSearchComponent implements OnInit {
 
   characters: Observable<Character[]>;
 
@@ -49,3 +51,4 @@ export class CharacterSearchComponent implements OnInit {
     this.router.navigate(link);
   }
 }
+

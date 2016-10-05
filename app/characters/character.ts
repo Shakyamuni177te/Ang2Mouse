@@ -2,7 +2,7 @@ export class Character {
   id: number;
   name: string;
   stamina: number;
-  sandomness: number;
+  randomness: number;
   accuracy: number;
   laydeeeeez: number;
   menz: number;
