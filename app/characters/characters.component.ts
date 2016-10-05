@@ -13,6 +13,7 @@ import { CharacterService } from './character.service';
 })
 
 export class CharactersComponent implements OnInit {
+
   sectiontitle = 'Character Selection';
   characters: Character[];
   selectedCharacter: Character;

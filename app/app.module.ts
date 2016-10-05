@@ -11,10 +11,10 @@ import './rxjs-extensions';
 
 import { AppComponent }             from './app.component';
 import { DashboardComponent }       from './dashboard.component';
-import { CharacterSearchComponent } from './character-search.component';
-import { CharacterDetailComponent } from './character-detail.component';
-import { CharactersComponent }      from './characters.component';
-import { CharacterService }         from './character.service';
+import { CharacterSearchComponent } from './characters/character-search.component';
+import { CharacterDetailComponent } from './characters/character-detail.component';
+import { CharactersComponent }      from './characters/characters.component';
+import { CharacterService }         from './characters/character.service';
 import { routing }                  from './app.routing';
 
 @NgModule({

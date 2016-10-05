@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { Character } from './character';
-import { CharacterService } from './character.service';
+import { Character } from './characters/character';
+import { CharacterService } from './characters/character.service';
 
 @Component({
   moduleId: module.id,

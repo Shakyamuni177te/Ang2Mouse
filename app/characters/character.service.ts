@@ -4,7 +4,6 @@ import { Headers, Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 
 import { Character } from './character';
-import { CHARACTERS } from './mock.characters';
 
 @Injectable()
 export class CharacterService {
