@@ -9,7 +9,7 @@ import { Character } from './character';
 export class CharacterService {
 
   private headers = new Headers({'Content-Type': 'application/json'});
-  private charactersUrl = 'app/characters';  // URL to web api
+  private charactersUrl = 'app/characters/characters';  // URL to web api
   
   constructor(private http: Http) { }
 
