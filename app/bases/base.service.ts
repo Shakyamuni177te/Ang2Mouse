@@ -3,10 +3,10 @@ import { Headers, Http } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 
-import { Character } from './character';
+import { Character } from '../characters/character';
 
 @Injectable()
-export class CharacterService {
+export class BaseService {
 
   private headers = new Headers({'Content-Type': 'application/json'});
   private charactersUrl = 'app/characters';  // URL to web api
@@ -23,32 +23,6 @@ export class CharacterService {
   getCharacter(id: number): Promise<Character> {
     return this.getCharacters()
                .then(characters => characters.find(character => character.id === id));
-  }
-
-  create(name: string): Promise<Character> {
-    return this.http
-      .post(this.charactersUrl, JSON.stringify({name: name}), {headers: this.headers})
-      .toPromise()
-      .then(res => res.json().data)
-      .catch(this.handleError);
-  }
-
-  delete(id: number): Promise<void> {
-    const url = `${this.charactersUrl}/${id}`;
-    return this.http.delete(url, {headers: this.headers})
-      .toPromise()
-      .then(() => null)
-      .catch(this.handleError);
-  }
-
-
-  update(character: Character): Promise<Character> {
-    const url = `${this.charactersUrl}/${character.id}`;
-    return this.http
-      .put(url, JSON.stringify(character), {headers: this.headers})
-      .toPromise()
-      .then(() => character)
-      .catch(this.handleError);
   }  
 
   private handleError(error: any): Promise<any> {
