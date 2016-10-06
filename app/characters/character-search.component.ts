@@ -37,7 +37,7 @@ export class CharacterSearchComponent implements OnInit {
         ? this.characterSearchService.search(term)
         // or the observable of empty heroes if no search term
         : Observable.of<Character[]>([]))
-      .catch(error => {
+          .catch(error => {
         // TODO: real error handling
         console.log(error);
         return Observable.of<Character[]>([]);
