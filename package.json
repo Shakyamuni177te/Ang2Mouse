@@ -21,8 +21,6 @@
     "@angular/router": "3.0.0",
     "@angular/upgrade": "2.0.0",
     "angular2-in-memory-web-api": "0.0.20",
-    "angular2-meteor": "^0.7.0",
-    "angular2-universal": "^2.0.11",
     "body-parser": "^1.15.2",
     "bootstrap": "^3.3.6",
     "core-js": "^2.4.1",
