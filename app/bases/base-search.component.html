@@ -1,10 +1,10 @@
-<div id="search-component">
-  <h4>Character Search</h4>
+<div id="base-search-component">
+  <h4>Base Search</h4>
   <input #searchBox id="search-box" (keyup)="search(searchBox.value)" />
   <div>
-    <div *ngFor="let character of characters | async"
-         (click)="gotoDetail(character)" class="search-result" >
-      {{character.name}}
+    <div *ngFor="let base of bases | async"
+         (click)="gotoDetail(base)" class="search-result" >
+      {{base.name}}
     </div>
   </div>
 </div>
