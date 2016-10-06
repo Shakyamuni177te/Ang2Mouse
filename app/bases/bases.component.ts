@@ -3,7 +3,7 @@ import { Router }            from '@angular/router';
 
 @Component({
     moduleId: module.id,
-    selector: 'mouse-characters',
+    selector: 'mouse-bases',
     templateUrl: 'bases.component.html',
     styleUrls: [ 'bases.component.css' ] 
 })
