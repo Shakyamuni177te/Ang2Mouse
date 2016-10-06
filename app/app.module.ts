@@ -7,7 +7,6 @@ import { HttpModule }    from '@angular/http';
 import { InMemoryWebApiModule }      from 'angular2-in-memory-web-api';
 import { InMemoryCharacterService }  from './characters/in-memory-character.service';
 import { InMemoryBasesService }       from './bases/in-memory-bases.service';
-import 'angular2-meteor-polyfills';
 
 import './rxjs-extensions';
 
