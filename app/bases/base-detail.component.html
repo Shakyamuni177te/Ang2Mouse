@@ -1,27 +1,23 @@
-<div *ngIf="character" class="currentCharacter container">
-  <h3>Edit {{character.name}}</h3>
+<div *ngFor="base in bases" class="currentBase container">
+  <h3>{{base.name}}</h3>
   <div>
     <label>Name: </label>
-    <input [(ngModel)]="character.name" placeholder="name">
+    <input [(ngModel)]="base.size" placeholder="Size">
   </div>
   <div>
-    <label>Stamina: {{character.stamina}}</label>
+    <label>Network: {{base.network}}</label>
   </div>
   <div>
-    <label>Randomness: {{character.randomness}}</label>
+    <label>Server: {{base.server}}</label>
   </div>
   <div>
-    <label>Accuracy: {{character.accuracy}}</label>
+    <label>Facilities: {{base.facilities}}</label>
   </div>
   <div>
-    <label>Laydeeeeez: {{character.laydeeeeez}}</label>
+    <label>Garrison: {{base.character.inbase}}</label>
   </div>
   <div>
-    <label>Menz: {{character.menz}}</label>
+    <label>On Mission: {{base.character.onmission}}</label>
   </div>
-  <div>
-    <label>Emotional Maturity: {{character.emotionalMaturity}}</label>
-  </div>
-  <button (click)="goBack()">Back</button>
-  <button (click)="save()">Save</button>           
+  <button (click)="goBack()">Back</button>         
 </div>
