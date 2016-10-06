@@ -3,10 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }   from '@angular/forms';
 import { HttpModule }    from '@angular/http';
 
-// Imports for loading & configuring the in-memory web api
+// Imports for loading & configuring databasing
 import { InMemoryWebApiModule }      from 'angular2-in-memory-web-api';
 import { InMemoryCharacterService }  from './characters/in-memory-character.service';
 import { InMemoryBasesService }       from './bases/in-memory-bases.service';
+import 'angular2-meteor-polyfills';
 
 import './rxjs-extensions';
 
