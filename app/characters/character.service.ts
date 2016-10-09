@@ -1,6 +1,7 @@
 import { Injectable }    from '@angular/core';
 import { Headers, Http } from '@angular/http';
 
+import { Observable }     from 'rxjs/Observable';
 import 'rxjs/add/operator/toPromise';
 
 import { Character } from './character';
@@ -13,23 +14,22 @@ export class CharacterService {
   
   constructor(private http: Http) { }
 
-  getCharacters(): Promise<Character[]> {
+  getCharacters(): Observable<Character[]> {
     return this.http.get(this.charactersUrl)
-               .toPromise()
-               .then(response => response.json().data as Character[])
+               .map(res => res.json().data as Character[])
                .catch(this.handleError);
   }
 
   getCharacter(id: number): Promise<Character> {
     return this.getCharacters()
+               .toPromise()
                .then(characters => characters.find(character => character.id === id));
   }
 
-  create(name: string): Promise<Character> {
+  create(name: string): Observable<Character> {
     return this.http
       .post(this.charactersUrl, JSON.stringify({name: name}), {headers: this.headers})
-      .toPromise()
-      .then(res => res.json().data)
+      .map(res => res.json().data)
       .catch(this.handleError);
   }
 
@@ -51,8 +51,13 @@ export class CharacterService {
       .catch(this.handleError);
   }  
 
-  private handleError(error: any): Promise<any> {
-  console.error('An error occurred', error); // for demo purposes only
-  return Promise.reject(error.message || error);
+  private handleError (error: any) {
+    // In a real world app, we might use a remote logging infrastructure
+    // We'd also dig deeper into the error to get a better message
+    let errMsg = (error.message) ? error.message :
+      error.status ? `${error.status} - ${error.statusText}` : 'Server error';
+    console.error(errMsg); // log to console instead
+    return Observable.throw(errMsg);
   }
+
 }

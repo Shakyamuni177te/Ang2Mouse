@@ -22,7 +22,8 @@ export class MissionsComponent implements OnInit {
 
   ngOnInit(): void {
     this.characterService.getCharacters()
-      .then(characters => this.characters = characters.slice(1, 5));
+      .subscribe(
+                 characters => this.characters = characters.slice(1, 5));
   }
 
   gotoDetail(character: Character): void {

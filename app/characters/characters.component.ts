@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router }            from '@angular/router';
+import { Observable }        from 'rxjs/Observable';
 
 import { Character } from './character';
 
@@ -17,14 +18,18 @@ export class CharactersComponent implements OnInit {
   sectiontitle = 'Character Selection';
   characters: Character[];
   selectedCharacter: Character;
-  
+  mode = 'Observable';
+  errorMessage: string;  
 
   constructor(
     private router: Router,
     private characterService: CharacterService) { }
 
-  getCharacters(): void {
-    this.characterService.getCharacters().then(characters => this.characters = characters);
+  getCharacters() {
+    this.characterService.getCharacters()
+                         .subscribe(
+                                     characters => this.characters = characters
+                                   );
   }
 
   ngOnInit(): void {
@@ -39,10 +44,12 @@ export class CharactersComponent implements OnInit {
     name = name.trim();
     if (!name) { return; }
     this.characterService.create(name)
-        .then(character => {
-          this.characters.push(character);
-           this.selectedCharacter = null;
-        });
+        .subscribe(
+                     character => {
+                     this.characters.push(character);
+                     this.selectedCharacter = null;
+                     }
+                   );
   }
   
   delete(character: Character): void {

@@ -29,6 +29,7 @@ import { routing }                  from './app.routing';
     BrowserModule,
     FormsModule,
     HttpModule,
+    JsonpModule,
     InMemoryWebApiModule.forRoot(InMemoryCharacterService),
     routing
   ],
