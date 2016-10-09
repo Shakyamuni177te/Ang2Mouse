@@ -1,9 +1,9 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }   from '@angular/forms';
-import { HttpModule, JsonpModule }    from '@angular/http';
+import { HttpModule }    from '@angular/http';
 
-// Imports for loading & configuring databasing
+// Imports for loading and configuring databasing
 import { InMemoryWebApiModule }      from 'angular2-in-memory-web-api';
 import { InMemoryCharacterService }  from './characters/in-memory-character.service';
 import { InMemoryBasesService }       from './bases/in-memory-bases.service';
@@ -29,7 +29,6 @@ import { routing }                  from './app.routing';
     BrowserModule,
     FormsModule,
     HttpModule,
-    JsonpModule,
     InMemoryWebApiModule.forRoot(InMemoryCharacterService),
     routing
   ],
