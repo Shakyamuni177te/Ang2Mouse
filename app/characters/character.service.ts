@@ -1,5 +1,5 @@
-import { Injectable }    from '@angular/core';
-import { Headers, Http, Response } from '@angular/http';
+import { Injectable }                              from '@angular/core';
+import { Headers, Http, Response, RequestOptions } from '@angular/http';
 
 import { Observable }     from 'rxjs/Observable';
 import 'rxjs/add/operator/toPromise';
@@ -27,8 +27,11 @@ export class CharacterService {
   }
 
   create(name: string): Observable<Character> {
-    return this.http
-      .post(this.charactersUrl, JSON.stringify({name: name}), {headers: this.headers})
+    let body = JSON.stringify({ name });
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    let options = new RequestOptions({ headers: headers });
+
+    return this.http.post(this.charactersUrl, body, options)
       .map(this.extractData)
       .catch(this.handleError);
   }
