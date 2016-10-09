@@ -1,5 +1,5 @@
 import { Injectable }    from '@angular/core';
-import { Headers, Http } from '@angular/http';
+import { Headers, Http, Response } from '@angular/http';
 
 import { Observable }     from 'rxjs/Observable';
 import 'rxjs/add/operator/toPromise';
@@ -16,7 +16,7 @@ export class CharacterService {
 
   getCharacters(): Observable<Character[]> {
     return this.http.get(this.charactersUrl)
-               .map(res => res.json().data as Character[])
+               .map(this.extractData)
                .catch(this.handleError);
   }
 
@@ -29,7 +29,7 @@ export class CharacterService {
   create(name: string): Observable<Character> {
     return this.http
       .post(this.charactersUrl, JSON.stringify({name: name}), {headers: this.headers})
-      .map(res => res.json().data)
+      .map(this.extractData)
       .catch(this.handleError);
   }
 
@@ -50,6 +50,11 @@ export class CharacterService {
       .then(() => character)
       .catch(this.handleError);
   }  
+  
+  private extractData(res: Response) {
+    let body = res.json();
+    return body.data || { };
+  }
 
   private handleError (error: any) {
     // In a real world app, we might use a remote logging infrastructure
