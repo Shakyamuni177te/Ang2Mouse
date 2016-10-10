@@ -4,7 +4,7 @@ import { FormsModule }   from '@angular/forms';
 import { HttpModule }    from '@angular/http';
 
 // Imports for loading and configuring databasing
-import { InMemoryWebApiModule }      from 'angular2-in-memory-web-api';
+import { InMemoryWebApiModule }      from 'angular-in-memory-web-api';
 import { InMemoryCharacterService }  from './characters/in-memory-character.service';
 import { InMemoryBasesService }       from './bases/in-memory-bases.service';
 

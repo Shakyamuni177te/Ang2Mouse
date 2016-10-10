@@ -11,11 +11,11 @@ import { BasesComponent } from './bases/bases.component';
 const appRoutes: Routes = [
   {
     path: '',
-    redirectTo: '/missions',
+    redirectTo: '/search',
     pathMatch: 'full'
   },
   {
-    path: 'missions',
+    path: 'search',
     component: MissionsComponent
   },
   {
