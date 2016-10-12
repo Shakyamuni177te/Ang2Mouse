@@ -1,5 +1,8 @@
-import { InMemoryDbService } from 'angular2-in-memory-web-api';
+// in memory data storage import; holds character info prior to
+// and database operations
+import { InMemoryDbService } from 'angular-in-memory-web-api';
 
+// create character data and make it available to the application
 export class InMemoryCharacterService implements InMemoryDbService {
   createDb() {
     let characters = [
