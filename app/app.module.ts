@@ -57,7 +57,7 @@ import { routing }  from './app.routing';
   ],
   providers: [
     CharacterService,
-    BasesServices
+    BasesService
   ],
   bootstrap: [
      AppComponent 
