@@ -7,13 +7,6 @@ import { By }             from '@angular/platform-browser';
 
 ////////  SPECS  /////////////
 
-/// Delete this
-describe('Smoke test', () => {
-  it('should run a passing test', () => {
-    expect(true).toEqual(true, 'should pass');
-  });
-});
-
 describe('AppComponent with TCB', function () {
   beforeEach(() => {
     TestBed.configureTestingModule({declarations: [AppComponent]});
