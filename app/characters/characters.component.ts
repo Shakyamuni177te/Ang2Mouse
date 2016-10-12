@@ -9,15 +9,15 @@ import { Observable }        from 'rxjs/Observable';
 import { Character } from './character';
 
 // import character service (tells the component what to do with the
-// character data
+// character data)
 import { CharacterService } from './character.service';
 
 // load in the character page. The moduleId is a unique identifier
 // which allows the module to be referenced from elsewhere in the
 // application. The selector is the string used to reference the
 // component in the referencing HTML page. The templateUrl is the
-// location on the template HTML page for the characters component
-// and styleUrls tells the compent where to find the stylings for
+// location in the template HTML page for the characters component,
+// and styleUrls tells the component where to find the stylings for
 // the page. 
 @Component({
     moduleId: module.id,
