@@ -1,11 +1,24 @@
+// import components, initialisation function (makes code run when the
+// application starts, router (which URL routes to where and suchlike)
+// and observables (create readable data-streams)
 import { Component, OnInit } from '@angular/core';
 import { Router }            from '@angular/router';
 import { Observable }        from 'rxjs/Observable';
 
+// import definition(s) for character data
 import { Character } from './character';
 
+// import character service (tells the component what to do with the
+// character data
 import { CharacterService } from './character.service';
 
+// load in the character page. The moduleId is a unique identifier
+// which allows the module to be referenced from elsewhere in the
+// application. The selector is the string used to reference the
+// component in the referencing HTML page. The templateUrl is the
+// location on the template HTML page for the characters component
+// and styleUrls tells the compent where to find the stylings for
+// the page. 
 @Component({
     moduleId: module.id,
     selector: 'mouse-characters',
@@ -13,6 +26,10 @@ import { CharacterService } from './character.service';
     styleUrls: [ 'characters.component.css' ] 
 })
 
+// tells the client computer how the component page
+// should be composed, what data services need to 
+// be called and when, and how to process the returned
+// data in order to correctly display it on the page
 export class CharactersComponent implements OnInit {
 
   sectiontitle = 'Character Selection';
