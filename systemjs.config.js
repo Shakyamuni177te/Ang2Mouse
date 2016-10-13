@@ -26,6 +26,16 @@
       // other libraries
       'rxjs':                       'npm:rxjs',
       'angular-in-memory-web-api': 'npm:angular-in-memory-web-api',
+      // auth0 related libraries
+      'angular2-jwt': 'npm:angular2-jwt',
+      'base64-js': 'npm:base64-js/index.js',
+      'buffer': 'npm:buffer/index.js',
+      'convert-hex': 'npm:sha256/npm:convert-hex/convert-hex.js',
+      'convert-string': 'npm:sha256/npm:convert-string/convert-string.js',
+      'ieee754': 'npm:ieee754/index.js',
+      'isarray': 'npm:buffer/node_modules/isarray/index.js',
+      'js-base64': 'npm:js-base64/base64.js',
+      'sha256': 'npm:sha256/lib/sha256.js'
     },
     // packages tells the System loader how to load when no filename and/or no extension
     packages: {
@@ -38,6 +48,10 @@
       },
       'angular-in-memory-web-api': {
         main: './index.js',
+        defaultExtension: 'js'
+      },
+      'angular2-jwt': {
+        main: './angular2-jwt.js',
         defaultExtension: 'js'
       }
     }
