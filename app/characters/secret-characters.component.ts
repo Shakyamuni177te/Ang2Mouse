@@ -21,16 +21,16 @@ import { CharacterService } from './character.service';
 // the page. 
 @Component({
     moduleId: module.id,
-    selector: 'mouse-characters',
-    templateUrl: 'characters.component.html',
-    styleUrls: [ 'characters.component.css' ] 
+    selector: 'secret-characters',
+    templateUrl: 'secret-characters.component.html',
+    styleUrls: [ 'secret-characters.component.css' ] 
 })
 
 // tells the client computer how the component page
 // should be composed, what data services need to 
 // be called and when, and how to process the returned
 // data in order to correctly display it on the page
-export class CharactersComponent implements OnInit {
+export class SecretCharactersComponent implements OnInit {
 
   sectiontitle = 'Character Selection';
   characters: Character[];
@@ -42,22 +42,22 @@ export class CharactersComponent implements OnInit {
     private router: Router,
     private characterService: CharacterService) { }
 
-  getCharacters() {
-    this.characterService.getCharacters()
+  getSecretCharacters() {
+    this.characterService.getSecretCharacters()
                          .subscribe(
                                      characters => this.characters = characters
                                    );
   }
 
   ngOnInit(): void {
-    this.getCharacters();
+    this.getSecretCharacters();
   }
 
   onSelect(character: Character): void {
     this.selectedCharacter = character;
   }
   
-  add(name: string): void {
+  addSecretCharacter(name: string): void {
     name = name.trim();
     if (!name) { return; }
     this.characterService.create(name)
@@ -69,7 +69,7 @@ export class CharactersComponent implements OnInit {
                    );
   }
   
-  delete(character: Character): void {
+  deleteSecretCharacter(character: Character): void {
     this.characterService
       .delete(character.id)
       .then(() => {

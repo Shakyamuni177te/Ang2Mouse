@@ -14,14 +14,19 @@ export class InMemoryCharacterService implements InMemoryDbService {
       {id: 6, name: 'Furry-Giraffe', stamina: 52, randomness: 38, accuracy: 97, laydeeeeez: 88, menz: 92, emotionalMaturity: 98},
       {id: 7, name: 'Ariadne', stamina: 30, randomness: 59, accuracy: 45, laydeeeeez: 44, menz: 62, emotionalMaturity: 34},
       {id: 8, name: 'Deer-Wolf', stamina: 31, randomness: 51, accuracy: 57, laydeeeeez: 54, menz: 83, emotionalMaturity: 69},
-      {id: 9, name: 'Tiger-Hummingbird', stamina: 85, randomness: 82, accuracy: 52, laydeeeeez: 43, menz: 48, emotionalMaturity: 52},
+      {id: 9, name: 'Tiger-Hummingbird', stamina: 85, randomness: 82, accuracy: 52, laydeeeeez: 43, menz: 48, emotionalMaturity: 52}
+    ];
+    return {characters};
+  }
+    createDB() {
+    let secretCharacters = [
       {id: 10, name: 'Lene-Cow', stamina: 41, randomness: 97, accuracy: 22, laydeeeeez: 12, menz: 58, emotionalMaturity: 22},
       {id: 11, name: 'Ant-Salamander', stamina: 72, randomness: 100, accuracy: 2, laydeeeeez: 0, menz: 0, emotionalMaturity: 99},
       {id: 12, name: 'Bluewhale-Beaver', stamina: 32, randomness: 31, accuracy: 45, laydeeeeez: 17, menz: 9, emotionalMaturity: 64},
       {id: 13, name: 'Red-Spirit', stamina: 65, randomness: 3, accuracy: 57, laydeeeeez: 23, menz: 62, emotionalMaturity: 22},
-      {id: 14, name: 'Moon-Possum', stamina: 14, randomness: 75, accuracy: 67, laydeeeeez: 47, menz: 39, emotionalMaturity: 85} 
+      {id: 14, name: 'Moon-Possum', stamina: 34, randomness: 75, accuracy: 67, laydeeeeez: 47, menz: 39, emotionalMaturity: 55} 
     ];
-    return {characters};
+    return {secretCharacters};
   }
 }
 
