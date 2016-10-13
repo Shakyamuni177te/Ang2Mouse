@@ -11,7 +11,7 @@ declare var Auth0Lock: any;
 @Injectable()
 export class AuthService {
 
-  lock = new Auth0Lock('xhpJWNQ30P4KsAr5uql9LBQJuoYtUTXo', 'peterdcarter.eu.auth0.com');
+  lock = new Auth0Lock('', '');
   
   // create authentication routing
   constructor(private router: Router) {
@@ -59,7 +59,7 @@ export class AuthService {
 
     // Send the user back to the dashboard after logout
 
-    this.router.navigateByUrl('/dashboard');
+    this.router.navigateByUrl('/missions');
 
   }
   
