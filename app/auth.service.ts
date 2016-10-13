@@ -11,9 +11,7 @@ declare var Auth0Lock: any;
 @Injectable()
 export class AuthService {
 
-  // Get AUTH0_CLIENT_ID and AUTH0_DOMAIN from management dashboard.
-
-  lock = new Auth0Lock('AUTH0_CLIENT_ID', 'AUTH0_DOMAIN');
+  lock = new Auth0Lock('xhpJWNQ30P4KsAr5uql9LBQJuoYtUTXo', 'peterdcarter.eu.auth0.com');
   
   // create authentication routing
   constructor(private router: Router) {

@@ -1,8 +1,9 @@
 // import internal Angular2 components
-import { NgModule }      from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule }   from '@angular/forms';
-import { HttpModule }    from '@angular/http';
+import { NgModule }        from '@angular/core';
+import { BrowserModule }   from '@angular/platform-browser';
+import { FormsModule }     from '@angular/forms';
+import { HttpModule }      from '@angular/http';
+import { AUTH_PROVIDERS }  from 'angular2-jwt';
 
 // imports for loading and configuring databasing
 import { InMemoryWebApiModule }      from 'angular-in-memory-web-api';
@@ -29,8 +30,18 @@ import { BasesComponent }      from './bases/bases.component';
 import { BasesService }        from './bases/bases.service';
 import { BasesSearchService }  from './bases/bases-search.service';
 
+// import hidden character modules
+import { SecretCharacterDetailComponent } from './characters/secret-character-detail.component';
+import { SecretCharactersComponent }      from './characters/secret-characters.component';
+
+
 // imports application routing
-import { routing }  from './app.routing';
+import { routing }           from './app.routing';
+import { routedComponents }  from './app.routing';
+
+// import local Auth0 authentication modules
+import { AuthService } from './auth.service';
+import { AuthGuard }   from './auth-guard.service';
 
 // define module scope: 'imports:' are global functions imported 
 // from the main Angular2 libraries; 'declarations:' defines 
@@ -53,11 +64,15 @@ import { routing }  from './app.routing';
     CharacterDetailComponent,
     CharactersComponent,
     CharacterSearchComponent,
-    BasesComponent
+    BasesComponent,
+    routedComponents
   ],
   providers: [
     CharacterService,
-    BasesService
+    BasesService,
+    AUTH_PROVIDERS,
+    AuthService,
+    AuthGuard
   ],
   bootstrap: [
      AppComponent 
