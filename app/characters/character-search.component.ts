@@ -35,7 +35,7 @@ export class CharacterSearchComponent implements OnInit {
       .switchMap(term => term   // switch to new observable each time
         // return the http search observable
         ? this.characterSearchService.search(term)
-        // or the observable of empty heroes if no search term
+        // or the observable of empty characters if no search term
         : Observable.of<Character[]>([]))
           .catch(error => {
         // TODO: real error handling
