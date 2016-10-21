@@ -34,14 +34,14 @@ import { BasesSearchService }  from './bases/bases-search.service';
 import { SecretCharacterDetailComponent } from './characters/secret-character-detail.component';
 import { SecretCharactersComponent }      from './characters/secret-characters.component';
 
-
 // imports application routing
 import { routing }           from './app.routing';
 import { routedComponents }  from './app.routing';
 
-// import local Auth0 authentication modules
-import { AuthService } from './auth.service';
-import { AuthGuard }   from './auth-guard.service';
+// import local Auth0 authentication and login modules
+import { AuthService }     from './auth.service';
+import { AuthGuard }       from './auth-guard.service';
+import { LoginComponent }  from './login.component';
 
 // define module scope: 'imports:' are global functions imported 
 // from the main Angular2 libraries; 'declarations:' defines 
@@ -60,6 +60,7 @@ import { AuthGuard }   from './auth-guard.service';
   ],
   declarations: [
     AppComponent,
+    LoginComponent,
     MissionsComponent,
     CharacterDetailComponent,
     CharactersComponent,

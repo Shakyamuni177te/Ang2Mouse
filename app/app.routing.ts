@@ -17,12 +17,19 @@ import { SecretCharacterDetailComponent }  from './characters/secret-character-d
 // import bases component
 import { BasesComponent }  from './bases/bases.component';
 
+// import custom login screen component
+import { LoginComponent }  from './login.component'
+
 // basic application routing (which URL maps to which component)
 const appRoutes: Routes = [
   {
     path: '',
     redirectTo: '/search',
     pathMatch: 'full'
+  },
+  {
+    path: 'login',
+    component: LoginComponent
   },
   {
     path: 'search',
