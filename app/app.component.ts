@@ -10,7 +10,7 @@ import { AuthService }  from './auth.service';
     <a routerLink="/search" routerLinkActive="active">Search</a>
     <a routerLink="/characters" routerLinkActive="active">List</a>
     <a routerLink="/secret-characters" routerLinkActive="authService.loggedIn()" routerLinkActive="active">Secret Characters</a>
-    <a (click)=authService.login() *ngIf="!authService.loggedIn()">Log In</a>
+    <a [routerLink]="['login']" *ngIf="!authService.loggedIn()">Log In</a>
     <a (click)=authService.logout() *ngIf="authService.loggedIn()">Log Out</a>
   </nav>
   <router-outlet></router-outlet>`,
