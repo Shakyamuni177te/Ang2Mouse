@@ -7,7 +7,12 @@
     "postinstall": "typings install",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
-    "typings": "typings"
+    "typings": "typings",
+    "clean": "rm -rf dist",
+    "serve": "http-server . -p 5556",
+    "build": "npm run clean && tsc",
+    "build_prod": "npm run build && browserify -s main app/main.js > app/bundle.js && npm run minify",
+    "minify": "uglifyjs app/bundle.js --screw-ie8 --compress --mangle --output app/bundle.min.js"
   },
   "license": "ISC",
   "dependencies": {
@@ -49,6 +54,7 @@
     "karma-jasmine": "^1.0.2",
     "lite-server": "^2.2.2",
     "typescript": "^2.0.3",
-    "typings": "^1.4.0"
+    "typings": "^1.4.0",
+    "uglify": "^0.1.5"
   }
 }
