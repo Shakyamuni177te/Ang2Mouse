@@ -1,5 +1,4 @@
-# Ang2Mouse
-##Order Of The Mouse: Phase 1.7 -- Operation Silk Scarf
+#Order Of The Mouse: Phase 1.7 -- Operation Silk Scarf
 
 ###A framework for Operation Silk Scarf. Part of Order Of The Mouse: a Web 2.1 game bringing roleplay to social media.
 
