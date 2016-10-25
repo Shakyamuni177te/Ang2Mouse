@@ -1,0 +1,25 @@
+{
+  "name": "mouseapi",
+  "version": "1.0.0",
+  "description": "API Layer for Order Of The Mouse: Phase 1.7 -- Operation Silk Scarf",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Shakyamuni177te/MouseAPI.git"
+  },
+  "author": "Peter David Carter",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cors": "^2.8.1",
+    "express": "^4.14.0",
+    "express-jwt": "^3.4.0"
+  },
+  "bugs": {
+    "url": "https://github.com/Shakyamuni177te/MouseAPI/issues"
+  },
+  "homepage": "https://github.com/Shakyamuni177te/MouseAPI#readme"
+}

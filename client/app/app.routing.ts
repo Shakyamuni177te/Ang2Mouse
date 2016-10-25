@@ -3,7 +3,6 @@ import { ModuleWithProviders }                from '@angular/core';
 // import routers
 import { Routes, RouterModule, CanActivate }  from '@angular/router';
 import { AuthGuard }                          from './auth-guard.service';                        
-
 // import mission component
 import { MissionsComponent }      from './missions.component';     
 
